@@ -1,17 +1,11 @@
 <template>
-  <div class="wallet-page">
+  <div class="containerA">
     <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
     <div class="back-index" @click="$router.push({ path: '/' })" />
     <div class="title">
       Wallet
     </div>
-    <div v-if="message != ''" id="badge">
-      <div class="user" />
-      <div class="message">
-        {{ message }}
-      </div>
-    </div>
-    <div v-if="!openMenu" class="show-wallet-1">
+    <div v-if="true" class="show-wallet-1">
       <img src="/wallet-1.png" alt="">
     </div>
     <div v-else class="show-wallet-2">
@@ -19,67 +13,45 @@
     </div>
     <div class="body-wallet">
       <img id="background" src="/line_blue_faded_background_69077_2560x1600.jpg" alt="">
-      <div v-if="openMenu" class="menu-list">
-        <div class="row-menu">
-          <div @click="$router.push({ path: 'balance' })">ดูยอดเงิน</div>
-          <div>ดู Group</div>
-        </div>
-        <div class="row-menu">
-          <div @click="$router.push({ name: 'transfer' })">
-            โอนเงิน
-          </div>
-          <div>ประวัติการโอนเงิน</div>
-        </div>
-      </div>
     </div>
-    <div class="click" @click="openMenu = !openMenu" />
+    <div class="click" @click="$router.push({ path: '/wallet' })" />
+    <SelectGroup id="createGroup" @status="checkmenu" />
   </div>
 </template>
 
 <script>
+import SelectGroup from '@/components/SelectGroup'
 export default {
-  name: 'Wallet',
-  data () {
+  components: {
+    SelectGroup
+  },
+  data() {
     return {
-      openMenu: false,
-      message: ''
+      isTransfer: false
     }
   },
   methods: {
-    setMessage(m) {
-      this.message = m
+    checkmenu(e) {
+      switch (e) {
+        case 'balance':
+          this.$router.push({ path: '/wallet' })
+          break
+      }
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.wallet-page {
-  font-family: 'Athiti', sans-serif;
-  position: relative;
-  #badge{
-    position: absolute;
-    top: 300px;
+<style lang="scss">
+.containerA {
+  font-family: 'Athiti', sans-serif !important;
+  #createGroup {
+    position: fixed;
+    z-index: 3;
+    bottom: 142px;
     left: 0;
-    z-index: 99;
-    display: flex;
-    .user{
-      width: 100px;
-      height: 100px;
-      margin-left: 50px;
-      border-radius: 50%;
-      background-color: lightgreen;
-    }
-    .message{
-      font-size: 50px;
-      padding: 20px 40px;
-      width: 800px;
-      height: fit-content;
-      margin-left: 50px;
-      border-radius: 50px;
-      background-color: white;
-    }
   }
+  position: relative;
   .back-index {
     position: absolute;
     width: 170px;
