@@ -60,7 +60,7 @@ export default {
     return {
       openMenu: false,
       message: '',
-      showVisual: true
+      showVisual: false
     }
   },
   mounted () {
@@ -74,6 +74,10 @@ export default {
         break
       case 'history':
         this.setMessage('วันที่ 27/10/2019 โอนเงินให้ A => B จำนวน 5,000 บาท')
+        break
+      case 'virtualization':
+        this.showVisual = true
+        this.setMessage('')
         break
       default:
         this.setMessage('ยอดเงินคงเหลือ 1,000,000 บาท')
