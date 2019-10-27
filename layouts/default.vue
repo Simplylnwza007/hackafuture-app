@@ -1,13 +1,13 @@
 <template>
   <div>
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
     <nuxt />
   </div>
 </template>
 
 <style lang="scss">
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Athiti', sans-serif !important;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

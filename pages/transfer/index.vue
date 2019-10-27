@@ -1,5 +1,6 @@
 <template>
   <div class="containerA">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
     <div class="back-index" @click="$router.push({ path: '/' })" />
     <div class="title">
       Wallet
@@ -43,6 +44,7 @@ export default {
 
 <style lang="scss">
 .containerA {
+  font-family: 'Athiti', sans-serif !important;
   #createGroup {
     position: fixed;
     z-index: 3;
