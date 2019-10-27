@@ -1,5 +1,6 @@
 <template>
   <div class="wallet-page">
+    <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
     <div class="back-index" @click="$router.push({ path: '/' })"/>
     <div class="title">
       Wallet
@@ -46,6 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 .wallet-page {
+  font-family: 'Athiti', sans-serif;
   position: relative;
   .back-index {
     position: absolute;
