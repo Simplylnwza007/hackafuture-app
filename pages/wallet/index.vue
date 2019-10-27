@@ -1,9 +1,15 @@
 <template>
   <div class="wallet-page">
     <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
-    <div class="back-index" @click="$router.push({ path: '/' })"/>
+    <div class="back-index" @click="$router.push({ path: '/' })" />
     <div class="title">
       Wallet
+    </div>
+    <div v-if="message != ''" id="badge">
+      <div class="user" />
+      <div class="message">
+        {{ message }}
+      </div>
     </div>
     <div v-if="!openMenu" class="show-wallet-1">
       <img src="/wallet-1.png" alt="">
@@ -31,18 +37,18 @@
 </template>
 
 <script>
-
 export default {
   name: 'Wallet',
   data () {
     return {
-      openMenu: false
+      openMenu: false,
+      message: ''
     }
   },
   methods: {
-    // openMenu () {
-    //   alert(1)
-    // }
+    setMessage(m) {
+      this.message = m
+    }
   }
 }
 </script>
@@ -51,6 +57,29 @@ export default {
 .wallet-page {
   font-family: 'Athiti', sans-serif;
   position: relative;
+  #badge{
+    position: absolute;
+    top: 300px;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    .user{
+      width: 100px;
+      height: 100px;
+      margin-left: 50px;
+      border-radius: 50%;
+      background-color: lightgreen;
+    }
+    .message{
+      font-size: 50px;
+      padding: 20px 40px;
+      width: 800px;
+      height: fit-content;
+      margin-left: 50px;
+      border-radius: 50px;
+      background-color: white;
+    }
+  }
   .back-index {
     position: absolute;
     width: 170px;
