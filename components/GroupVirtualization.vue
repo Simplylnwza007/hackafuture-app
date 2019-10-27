@@ -16,15 +16,15 @@
       <!-- <span>จำนวน</span>
       <input class="input" type="number"> -->
     </div>
-    <div class="btn" @click="$emit('status','balance')">
-      <span>ดูยอดเงิน</span>
+    <div class="btn" @click="$emit('status','virtualization')">
+      <span>ดู</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CreateGroup',
+  name: 'createGroup',
   components: {},
   props: {},
   data () {

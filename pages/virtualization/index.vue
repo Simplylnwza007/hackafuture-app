@@ -1,11 +1,11 @@
 <template>
-  <div class="wallet-page">
+  <div class="virtualization">
     <link href="https://fonts.googleapis.com/css?family=Athiti&display=swap" rel="stylesheet">
-    <div class="back-index" @click="$router.push({ path: '/' })"/>
+    <div class="back-index" @click="$router.push({ path: '/' })" />
     <div class="title">
       Wallet
     </div>
-    <div v-if="!openMenu" class="show-wallet-1">
+    <div v-if="true" class="show-wallet-1">
       <img src="/wallet-1.png" alt="">
     </div>
     <div v-else class="show-wallet-2">
@@ -13,43 +13,46 @@
     </div>
     <div class="body-wallet">
       <img id="background" src="/line_blue_faded_background_69077_2560x1600.jpg" alt="">
-      <div v-if="openMenu" class="menu-list">
-        <div class="row-menu">
-          <div @click="$router.push({ path: 'balance' })">ดูยอดเงิน</div>
-          <div @click="$router.push({ path: 'virtualization' })">Group <br> Virtualization</div>
-        </div>
-        <div class="row-menu">
-          <div @click="$router.push({ name: 'transfer' })">
-            โอนเงิน
-          </div>
-          <div>ประวัติการโอนเงิน</div>
-        </div>
-      </div>
     </div>
-    <div class="click" @click="openMenu = !openMenu" />
+    <div class="click" @click="$router.push({ path: '/wallet' })" />
+    <GroupVirtualization id="createGroup" @status="checkmenu" />
   </div>
 </template>
 
 <script>
-
+import GroupVirtualization from '@/components/GroupVirtualization'
 export default {
-  name: 'Wallet',
-  data () {
+  name: 'virtualization',
+  components: {
+    GroupVirtualization
+  },
+  data() {
     return {
-      openMenu: false
+      isTransfer: false
     }
   },
   methods: {
-    // openMenu () {
-    //   alert(1)
-    // }
+    checkmenu(e) {
+      switch (e) {
+        case 'virtualization':
+          // localStorage.setItem('page', 'virtualization')
+          this.$router.push({ path: '/wallet' })
+          break
+      }
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.wallet-page {
-  font-family: 'Athiti', sans-serif;
+<style lang="scss">
+.virtualization {
+  font-family: 'Athiti', sans-serif !important;
+  #createGroup {
+    position: fixed;
+    z-index: 3;
+    bottom: 142px;
+    left: 0;
+  }
   position: relative;
   .back-index {
     position: absolute;
