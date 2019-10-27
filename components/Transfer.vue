@@ -1,5 +1,5 @@
 <template>
-  <div id="createGroup">
+  <div id="transfer">
     <div class="flex-layout">
       <span>จาก</span>
       <select class="input" name="group_select" style="margin-left:110px">
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'CreateGroup',
+  name: 'Transfer',
   components: {},
   props: {},
   data () {
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#createGroup {
+#transfer {
   font-size: 52px;
   width: 1080px;
   height: 600px;
