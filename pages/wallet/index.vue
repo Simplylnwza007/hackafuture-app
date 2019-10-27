@@ -1,5 +1,6 @@
 <template>
   <div class="wallet-page">
+    <div class="back-index" @click="$router.push({ path: '/' })"/>
     <div class="title">
       Wallet
     </div>
@@ -11,11 +12,15 @@
     </div>
     <div class="body-wallet">
       <img id="background" src="/line_blue_faded_background_69077_2560x1600.jpg" alt="">
-      <div class="menu-list">
-        <div>ดูยอดเงิน</div>
-        <div>ดู Group</div>
-        <div>โอนเงิน</div>
-        <div>ประวัติการโอนเงิน</div>
+      <div v-if="openMenu" class="menu-list">
+        <div class="row-menu">
+          <div>ดูยอดเงิน</div>
+          <div>ดู Group</div>
+        </div>
+        <div class="row-menu">
+          <div>โอนเงิน</div>
+          <div>ประวัติการโอนเงิน</div>
+        </div>
       </div>
     </div>
     <div class="click" @click="openMenu = !openMenu"/>
@@ -42,6 +47,11 @@ export default {
 <style lang="scss" scoped>
 .wallet-page {
   position: relative;
+  .back-index {
+    position: absolute;
+    width: 170px;
+    height: 200px;
+  }
   .title {
     position: absolute;
     color: #fff;
@@ -64,17 +74,27 @@ export default {
     .menu-list {
       position: absolute;
       bottom: 0;
-      width: 100%;
-      border: 1px solid #262f4a;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      display: flex;
-      div {
-        width: 25%;
-        text-align: center;
-        border: 1px solid #c4c4c4;
-        font-size: 60px;
-        background-color: #f1f1f1;
+      // width: 100%;
+      // border: 1px solid #262f4a;
+      // border-top-left-radius: 10px;
+      // border-top-right-radius: 10px;
+      width: 1080px;
+      height: 600px;
+      background-color: white;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding: 20px;
+      .row-menu {
+        width: 100%;
+        display: flex;
+        div {
+          width: 50%;
+          text-align: center;
+          border: 1px solid #c4c4c4;
+          font-size: 60px;
+          height: 290px;
+          padding-top: 85px;
+        }
       }
     }
   }
