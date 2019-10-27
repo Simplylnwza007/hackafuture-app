@@ -11,6 +11,19 @@
         {{ message }}
       </div>
     </div>
+    <div v-if="showVisual" id="badge">
+      <div class="user" />
+      <div class="visual">
+        <div class="circle" style="top: 40px;left:100px;background-color:grey;" />
+        <span style="top: 50px;left: 270px">บัญชีรับบริจาค<br>1,500,000 บาท</span>
+        <div class="circle" style="top: 240px;left:0px;background-color:orange;" />
+        <span style="top: 240px;left: 170px">คุณ<br>1,000,000 บาท</span>
+        <div class="circle" style="top: 240px;left:390px;background-color:blue;" />
+        <span style="top: 240px;left: 560px">นายประยูร<br>500,000 บาท</span>
+        <div class="circle" style="top: 440px;left:0px;background-color:red;" />
+        <span style="top: 440px;left: 170px">นายประเสริฐ<br>5,000 บาท</span>
+      </div>
+    </div>
     <div v-if="!openMenu" class="show-wallet-1">
       <img src="/wallet-1.png" alt="">
     </div>
@@ -21,8 +34,12 @@
       <img id="background" src="/line_blue_faded_background_69077_2560x1600.jpg" alt="">
       <div v-if="openMenu" class="menu-list">
         <div class="row-menu">
-          <div @click="$router.push({ path: 'balance' })">ดูยอดเงิน</div>
-          <div @click="$router.push({ path: 'virtualization' })">Group <br> Virtualization</div>
+          <div @click="$router.push({ path: 'balance' })">
+            ดูยอดเงิน
+          </div>
+          <div @click="$router.push({ path: 'virtualization' })">
+            Group <br> Virtualization
+          </div>
         </div>
         <div class="row-menu">
           <div @click="$router.push({ name: 'transfer' })">
@@ -42,7 +59,8 @@ export default {
   data () {
     return {
       openMenu: false,
-      message: ''
+      message: '',
+      showVisual: true
     }
   },
   mounted () {
@@ -95,6 +113,27 @@ export default {
       margin-left: 50px;
       border-radius: 50px;
       background-color: white;
+    }
+    .visual{
+      font-size: 30px;
+      padding: 20px 40px;
+      width: 800px;
+      height: 800px;
+      margin-left: 50px;
+      border-radius: 50px;
+      background-color: white;
+      position: relative;
+      .circle{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin-left: 50px;
+        border-radius: 50%;
+        background-color: lightgreen;
+      }
+      span{
+        position: absolute;
+      }
     }
   }
   .back-index {
