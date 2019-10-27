@@ -1,57 +1,21 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        hackafutue
-      </h1>
-      <h2 class="subtitle">
-        My delightful Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="containerA">
+    <img src="/index.png" alt="" @click="$router.push({ name: 'wallet' })" />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
+export default {}
 </script>
 
 <style lang="scss">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
+.containerA {
+  width: 1080px;
+  height: 2340px;
+  img {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
