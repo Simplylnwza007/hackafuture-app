@@ -35,7 +35,7 @@ export default {
     checkmenu(e) {
       switch (e) {
         case 'virtualization':
-          // localStorage.setItem('page', 'virtualization')
+          localStorage.setItem('page', 'virtualization')
           this.$router.push({ path: '/wallet' })
           break
       }

@@ -5,7 +5,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  mounted () {
+    localStorage.setItem('page', '')
+  }
+}
 </script>
 
 <style lang="scss">

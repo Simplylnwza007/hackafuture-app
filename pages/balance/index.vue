@@ -34,6 +34,7 @@ export default {
     checkmenu(e) {
       switch (e) {
         case 'balance':
+          localStorage.setItem('page', 'balance')
           this.$router.push({ path: '/wallet' })
           break
       }
@@ -42,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .containerA {
   font-family: 'Athiti', sans-serif !important;
   #createGroup {
