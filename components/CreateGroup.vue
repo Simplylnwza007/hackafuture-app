@@ -1,5 +1,5 @@
 <template>
-  <div id="createGroup" :v-if="!isSubmit">
+  <div id="createGroup">
     <div class="flex-layout">
       <span>จาก</span>
       <select class="input" name="group_select" style="margin-left:110px">
@@ -16,7 +16,7 @@
       <span>จำนวน</span>
       <input class="input" type="number">
     </div>
-    <div class="btn" @click="isSubmit = true">
+    <div class="btn" @click="$emit('status','transfer')">
       <span>โอนเงิน</span>
     </div>
   </div>
@@ -29,7 +29,6 @@ export default {
   props: {},
   data () {
     return {
-      isSubmit: false
     }
   },
   mounted () {},
