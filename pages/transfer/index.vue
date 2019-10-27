@@ -15,15 +15,15 @@
       <img id="background" src="/line_blue_faded_background_69077_2560x1600.jpg" alt="">
     </div>
     <div class="click" @click="$router.push({ path: '/wallet' })" />
-    <CreateGroup id="createGroup" @status="checkmenu" />
+    <Transfer id="transfer" @status="checkmenu" />
   </div>
 </template>
 
 <script>
-import CreateGroup from '@/components/CreateGroup'
+import Transfer from '@/components/Transfer'
 export default {
   components: {
-    CreateGroup
+    Transfer
   },
   data() {
     return {
@@ -45,7 +45,7 @@ export default {
 <style lang="scss">
 .containerA {
   font-family: 'Athiti', sans-serif !important;
-  #createGroup {
+  #transfer {
     position: fixed;
     z-index: 3;
     bottom: 142px;
