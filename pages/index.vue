@@ -1,6 +1,6 @@
 <template>
   <div class="containerA">
-    <img src="/index.png" alt="" @click="$router.push({ name: 'wallet' })" />
+    <img src="/index.png" alt="" @click="$router.push({ name: 'wallet' })">
   </div>
 </template>
 
